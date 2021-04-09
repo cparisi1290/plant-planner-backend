@@ -4,4 +4,19 @@ class Api::V1::PlantsController < ApplicationController
         plants = Plant.all
         render json: plants
     end
+
+    def create
+        plant = Plant.new(plant_params)
+        if plant.save
+            render json: plant, status: :accepted
+        else
+            render json: {errors: plant.errors.full_message}, status: :unprocessable_entity
+        end
+    end
+
+    private
+
+    def plant_params
+        params.require(:plant).permit(:name, :watering_day, :light, :water, :food, :humidity, :toxicity, :additional_care, :image_url, :room_id, :temperature)
+    end
 end
