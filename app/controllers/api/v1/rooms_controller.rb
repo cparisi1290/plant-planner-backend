@@ -1,4 +1,6 @@
 class Api::V1::RoomsController < ApplicationController
-  def name
+  
+  def index
+    rooms = Room.all
   end
 end
