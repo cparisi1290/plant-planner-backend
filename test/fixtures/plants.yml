@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  watering_day: MyString
+  light: MyString
+  water: MyString
+  food: MyString
+  humidity: MyString
+  toxicity: MyString
+  additional_care: MyString
+  image_url: MyString
+  room_id: 1
+
+two:
+  name: MyString
+  watering_day: MyString
+  light: MyString
+  water: MyString
+  food: MyString
+  humidity: MyString
+  toxicity: MyString
+  additional_care: MyString
+  image_url: MyString
+  room_id: 1
