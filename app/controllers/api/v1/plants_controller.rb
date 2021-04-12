@@ -15,7 +15,17 @@ class Api::V1::PlantsController < ApplicationController
         end
     end
 
+    def destroy
+        find_plant
+        @plant.destroy
+        render json: {message: "Successfully deleted #{@plant.name}"}
+    end
+
     private
+
+    def find_plant
+        @plant = Plant.find(params[:id])
+    end
 
     def plant_params
         params.require(:plant).permit(:name, :watering_day, :light, :water, :food, :humidity, :toxicity, :additional_care, :image_url, :room_id, :temperature)
