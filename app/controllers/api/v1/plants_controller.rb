@@ -8,6 +8,8 @@ class Api::V1::PlantsController < ApplicationController
 
     def create
         plant = Plant.new(plant_params)
+        room = Room.find_by(params["room.id"])
+        plant.room_id = room.id
         if plant.save
             render json: PlantSerializer.new(plant), status: :accepted
         else
